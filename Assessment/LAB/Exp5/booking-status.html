@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Status - SkyReserve</title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        ✈️ Sky<span>Reserve</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="search-flight.html">
+            Search Flights
+        </a>
+
+        <a href="booking-status.html"
+            class="active">
+            Booking Status
+        </a>
+
+        <a href="my-ticket.html">
+            My Ticket
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="page-header">
+
+    <p>RESERVATION TRACKING</p>
+
+    <h1>View Booking Status</h1>
+
+    <span>
+        Enter your PNR to check your current reservation status.
+    </span>
+
+</section>
+
+
+<section class="status-container">
+
+    <div class="status-search-card">
+
+        <div class="status-icon">
+            🔎
+        </div>
+
+        <h2>Check Your Booking</h2>
+
+        <p>
+            Enter the PNR generated during ticket booking.
+        </p>
+
+        <form onsubmit="checkBookingStatus(event)">
+
+            <input
+                type="text"
+                id="statusPNR"
+                placeholder="Enter PNR number"
+                maxlength="10"
+                required>
+
+            <button class="primary-btn">
+                Check Booking Status
+            </button>
+
+        </form>
+
+
+        <div id="statusResult"></div>
+
+    </div>
+
+</section>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

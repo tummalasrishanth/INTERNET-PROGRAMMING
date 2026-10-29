@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkyReserve - Flight Reservation System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        ✈️ Sky<span>Reserve</span>
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="search-flight.html">Search Flights</a>
+        <a href="booking-status.html">Booking Status</a>
+        <a href="my-ticket.html">My Ticket</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="admin-login.html" class="admin-nav">Admin</a>
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-content">
+
+            <p class="hero-tag">
+                SMART • SIMPLE • SECURE
+            </p>
+
+            <h1>
+                Your Journey<br>
+                Begins <span>Here.</span>
+            </h1>
+
+            <p>
+                Search flights, compare fares, choose your seat
+                and book your journey with SkyReserve.
+            </p>
+
+        </div>
+
+        <div class="flight-search-card">
+
+            <div class="search-tabs">
+
+                <button class="search-tab active">
+                    ✈️ Round Trip
+                </button>
+
+                <button class="search-tab">
+                    ➡️ One Way
+                </button>
+
+            </div>
+
+            <h2>Search Flights</h2>
+
+            <form onsubmit="searchFlights(event)">
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label>From</label>
+
+                        <select id="fromCity" required>
+
+                            <option value="">
+                                Select departure
+                            </option>
+
+                            <option>Chennai</option>
+                            <option>Bangalore</option>
+                            <option>Mumbai</option>
+                            <option>Delhi</option>
+                            <option>Hyderabad</option>
+                            <option>Kolkata</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="flight-swap">
+                        ⇄
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>To</label>
+
+                        <select id="toCity" required>
+
+                            <option value="">
+                                Select destination
+                            </option>
+
+                            <option>Chennai</option>
+                            <option>Bangalore</option>
+                            <option>Mumbai</option>
+                            <option>Delhi</option>
+                            <option>Hyderabad</option>
+                            <option>Kolkata</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label>Departure Date</label>
+
+                        <input
+                            type="date"
+                            id="flightDate"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Class</label>
+
+                        <select id="flightClass">
+
+                            <option>Economy</option>
+                            <option>Premium Economy</option>
+                            <option>Business</option>
+                            <option>First Class</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Passengers</label>
+
+                        <select id="passengers">
+
+                            <option>1 Passenger</option>
+                            <option>2 Passengers</option>
+                            <option>3 Passengers</option>
+                            <option>4 Passengers</option>
+                            <option>5 Passengers</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <button class="primary-btn">
+                    🔎 Search Flights
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="popular-section">
+
+    <div class="section-heading">
+
+        <p>EXPLORE DESTINATIONS</p>
+
+        <h2>Popular Flight Routes</h2>
+
+        <span>
+            Discover popular destinations and plan your next journey.
+        </span>
+
+    </div>
+
+    <div class="destination-grid">
+
+        <div class="destination-card chennai">
+
+            <div>
+                <span>FROM CHENNAI</span>
+                <h3>Chennai → Mumbai</h3>
+                <strong>From ₹4,299</strong>
+            </div>
+
+        </div>
+
+        <div class="destination-card bangalore">
+
+            <div>
+                <span>FROM BANGALORE</span>
+                <h3>Bangalore → Delhi</h3>
+                <strong>From ₹5,199</strong>
+            </div>
+
+        </div>
+
+        <div class="destination-card delhi">
+
+            <div>
+                <span>FROM DELHI</span>
+                <h3>Delhi → Hyderabad</h3>
+                <strong>From ₹3,899</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="features-section">
+
+    <div class="section-heading">
+
+        <p>WHY SKYRESERVE</p>
+
+        <h2>Everything For Your Journey</h2>
+
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon blue">
+                🔎
+            </div>
+
+            <h3>Easy Flight Search</h3>
+
+            <p>
+                Search flights by destination, date,
+                passenger count and travel class.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon green">
+                💺
+            </div>
+
+            <h3>Seat Selection</h3>
+
+            <p>
+                View seat availability and choose
+                your preferred seat.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon orange">
+                💳
+            </div>
+
+            <h3>Secure Payment</h3>
+
+            <p>
+                Complete your reservation through
+                a secure payment interface.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon purple">
+                🎫
+            </div>
+
+            <h3>Digital Ticket</h3>
+
+            <p>
+                Access your booking, itinerary and
+                printable e-ticket anytime.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div>
+
+        <h3>✈️ SkyReserve</h3>
+
+        <p>
+            Online Flight Reservation System
+        </p>
+
+    </div>
+
+    <div>
+
+        <p>
+            © 2026 SkyReserve | Internet Programming Project
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrator Login - SkyReserve</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="auth-body">
+
+<header class="navbar">
+
+    <div class="logo">
+        ✈️ Sky<span>Reserve</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="search-flight.html">
+            Search Flights
+        </a>
+
+        <a href="booking-status.html">
+            Booking Status
+        </a>
+
+    </nav>
+
+</header>
+
+
+<div class="auth-container">
+
+    <div class="auth-box">
+
+        <div class="auth-icon admin-icon">
+            👨‍💼
+        </div>
+
+        <h1>Administrator Login</h1>
+
+        <p>
+            Sign in to manage flights, bookings and reports.
+        </p>
+
+        <form onsubmit="adminLogin(event)">
+
+            <div class="input-group">
+
+                <label>Administrator Email</label>
+
+                <input
+                    type="email"
+                    id="adminEmail"
+                    placeholder="admin@skyreserve.com"
+                    required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Enter password"
+                    required>
+
+            </div>
+
+            <button class="primary-btn">
+                Login to Admin Panel
+            </button>
+
+        </form>
+
+        <p class="auth-bottom">
+
+            <a href="forgot-password.html">
+                Forgot Password?
+            </a>
+
+        </p>
+
+        <div class="demo-login">
+
+            <strong>Demo Admin Credentials</strong>
+
+            <p>
+                Email: admin@skyreserve.com
+            </p>
+
+            <p>
+                Password: admin123
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

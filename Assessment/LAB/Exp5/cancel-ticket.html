@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Cancel Ticket - SkyReserve</title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        ✈️ Sky<span>Reserve</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="my-ticket.html">
+            My Ticket
+        </a>
+
+        <a href="booking-status.html">
+            Booking Status
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="page-header">
+
+    <p>MANAGE RESERVATION</p>
+
+    <h1>Cancel Ticket</h1>
+
+    <span>
+        Enter your booking reference to cancel your ticket.
+    </span>
+
+</section>
+
+
+<section class="cancel-container">
+
+    <div class="cancel-card">
+
+        <div class="cancel-icon">
+            ⚠️
+        </div>
+
+        <h2>Cancel Your Reservation</h2>
+
+        <p>
+            Cancellation charges may apply according
+            to airline refund rules.
+        </p>
+
+
+        <form onsubmit="cancelTicket(event)">
+
+            <div class="input-group">
+
+                <label>
+                    Booking Reference / PNR
+                </label>
+
+                <input
+                    type="text"
+                    id="cancelPNR"
+                    placeholder="Enter 10-digit PNR"
+                    required>
+
+            </div>
+
+
+            <div class="refund-info">
+
+                <div>
+                    <span>
+                        Cancellation charge
+                    </span>
+
+                    <strong>
+                        20%
+                    </strong>
+                </div>
+
+                <div>
+                    <span>
+                        Estimated refund
+                    </span>
+
+                    <strong id="estimatedRefund">
+                        ₹0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <button class="danger-btn">
+                Cancel Ticket
+            </button>
+
+        </form>
+
+        <div id="cancelResult"></div>
+
+    </div>
+
+</section>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

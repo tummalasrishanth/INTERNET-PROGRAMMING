@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Report - SkyReserve</title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-logo">
+
+            ✈️ SkyReserve
+
+            <small>
+                ADMIN PANEL
+            </small>
+
+        </div>
+
+
+        <a class="admin-link active">
+            📊 Dashboard
+        </a>
+
+        <a class="admin-link">
+            ✈️ Flight Management
+        </a>
+
+        <a class="admin-link">
+            💺 Seat Inventory
+        </a>
+
+        <a class="admin-link">
+            👥 User Accounts
+        </a>
+
+        <a class="admin-link">
+            💰 Fare Management
+        </a>
+
+        <a class="admin-link">
+            🎫 Reservations
+        </a>
+
+        <a class="admin-link">
+            💳 Payments
+        </a>
+
+        <a class="admin-link">
+            💬 Customer Feedback
+        </a>
+
+        <a
+            href="index.html"
+            class="admin-link">
+            ← Back to Website
+        </a>
+
+    </aside>
+
+
+    <main class="admin-main">
+
+
+        <div class="admin-topbar">
+
+            <div>
+
+                <p>
+                    ADMINISTRATION
+                </p>
+
+                <h1>
+                    Flight Reservation Reports
+                </h1>
+
+            </div>
+
+            <div class="admin-user">
+                👨‍💼 Administrator
+            </div>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    ✈️
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Flights
+                    </span>
+
+                    <strong>
+                        248
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    🎫
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Bookings
+                    </span>
+
+                    <strong>
+                        8,426
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    👥
+                </div>
+
+                <div>
+
+                    <span>
+                        Registered Users
+                    </span>
+
+                    <strong>
+                        12,842
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ₹
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Revenue
+                    </span>
+
+                    <strong>
+                        ₹48.6L
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-grid">
+
+
+            <div class="admin-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h2>
+                            Flight Schedule
+                        </h2>
+
+                        <p>
+                            Current active flight schedules
+                        </p>
+
+                    </div>
+
+                    <button class="small-btn">
+                        + Add Flight
+                    </button>
+
+                </div>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Flight
+                            </th>
+
+                            <th>
+                                Airline
+                            </th>
+
+                            <th>
+                                Route
+                            </th>
+
+                            <th>
+                                Seats
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                SR 101
+                            </td>
+
+                            <td>
+                                SkyReserve
+                            </td>
+
+                            <td>
+                                Chennai → Mumbai
+                            </td>
+
+                            <td>
+                                84
+                            </td>
+
+                            <td>
+                                <span
+                                    class="status confirmed">
+                                    Active
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                SR 205
+                            </td>
+
+                            <td>
+                                SkyReserve
+                            </td>
+
+                            <td>
+                                Bangalore → Delhi
+                            </td>
+
+                            <td>
+                                112
+                            </td>
+
+                            <td>
+                                <span
+                                    class="status confirmed">
+                                    Active
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                SR 310
+                            </td>
+
+                            <td>
+                                SkyReserve
+                            </td>
+
+                            <td>
+                                Delhi → Hyderabad
+                            </td>
+
+                            <td>
+                                63
+                            </td>
+
+                            <td>
+                                <span
+                                    class="status confirmed">
+                                    Active
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="admin-card">
+
+                <h2>
+                    Booking Statistics
+                </h2>
+
+                <div class="report-stat">
+
+                    <span>
+                        Confirmed
+                    </span>
+
+                    <strong>
+                        72%
+                    </strong>
+
+                </div>
+
+                <div class="report-stat">
+
+                    <span>
+                        Cancelled
+                    </span>
+
+                    <strong>
+                        11%
+                    </strong>
+
+                </div>
+
+                <div class="report-stat">
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong>
+                        17%
+                    </strong>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress confirmed-progress">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <h2>
+                        Recent Reservations
+                    </h2>
+
+                    <p>
+                        Latest ticket booking transactions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            PNR
+                        </th>
+
+                        <th>
+                            Passenger
+                        </th>
+
+                        <th>
+                            Flight
+                        </th>
+
+                        <th>
+                            Route
+                        </th>
+
+                        <th>
+                            Amount
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            5829147362
+                        </td>
+
+                        <td>
+                            Rahul Kumar
+                        </td>
+
+                        <td>
+                            SR 101
+                        </td>
+
+                        <td>
+                            Chennai → Mumbai
+                        </td>
+
+                        <td>
+                            ₹5,049
+                        </td>
+
+                        <td>
+                            <span
+                                class="status confirmed">
+                                Confirmed
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            6192738450
+                        </td>
+
+                        <td>
+                            Anitha Raj
+                        </td>
+
+                        <td>
+                            SR 205
+                        </td>
+
+                        <td>
+                            Bangalore → Delhi
+                        </td>
+
+                        <td>
+                            ₹6,299
+                        </td>
+
+                        <td>
+                            <span
+                                class="status confirmed">
+                                Confirmed
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </main>
+
+</div>
+
+</body>
+</html>

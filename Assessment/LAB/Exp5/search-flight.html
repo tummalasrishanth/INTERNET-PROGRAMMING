@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Flights - SkyReserve</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        ✈️ Sky<span>Reserve</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="search-flight.html" class="active">
+            Search Flights
+        </a>
+
+        <a href="booking-status.html">
+            Booking Status
+        </a>
+
+        <a href="my-ticket.html">
+            My Ticket
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="page-header">
+
+    <p>FLIGHT RESERVATION</p>
+
+    <h1>Available Flights</h1>
+
+    <span>
+        Compare available flights and select your preferred journey.
+    </span>
+
+</section>
+
+
+<section class="flight-results">
+
+    <div class="search-summary">
+
+        <div>
+
+            <small>FROM</small>
+
+            <strong id="resultFrom">
+                Chennai
+            </strong>
+
+        </div>
+
+        <div class="route-line">
+            ✈
+        </div>
+
+        <div>
+
+            <small>TO</small>
+
+            <strong id="resultTo">
+                Mumbai
+            </strong>
+
+        </div>
+
+        <div>
+
+            <small>DATE</small>
+
+            <strong id="resultDate">
+                28 Oct 2026
+            </strong>
+
+        </div>
+
+        <div>
+
+            <small>CLASS</small>
+
+            <strong id="resultClass">
+                Economy
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div id="flightList"></div>
+
+</section>
+
+
+<script src="js/app.js"></script>
+
+<script>
+    loadFlights();
+</script>
+
+</body>
+</html>
