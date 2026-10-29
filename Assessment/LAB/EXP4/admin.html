@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Panel - RailConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-logo">
+            🚆 RailConnect
+            <small>ADMIN PANEL</small>
+        </div>
+
+        <a class="admin-link active">
+            📊 Dashboard
+        </a>
+
+        <a class="admin-link">
+            🚆 Train Management
+        </a>
+
+        <a class="admin-link">
+            💺 Seat Availability
+        </a>
+
+        <a class="admin-link">
+            👥 User Accounts
+        </a>
+
+        <a class="admin-link">
+            💰 Fare Management
+        </a>
+
+        <a class="admin-link">
+            💳 Payments
+        </a>
+
+        <a class="admin-link">
+            🔄 Refund Requests
+        </a>
+
+        <a href="index.html" class="admin-link">
+            ← Back to Website
+        </a>
+
+    </aside>
+
+    <main class="admin-main">
+
+        <div class="admin-topbar">
+
+            <div>
+                <p>ADMINISTRATION</p>
+                <h1>Railway Management Dashboard</h1>
+            </div>
+
+            <div class="admin-user">
+                👨‍💼 Admin
+            </div>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon blue">🚆</div>
+                <div>
+                    <span>Total Trains</span>
+                    <strong>128</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">👥</div>
+                <div>
+                    <span>Registered Users</span>
+                    <strong>4,582</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">🎟️</div>
+                <div>
+                    <span>Today's Bookings</span>
+                    <strong>342</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple">₹</div>
+                <div>
+                    <span>Today's Revenue</span>
+                    <strong>₹2.84L</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="admin-grid">
+
+            <div class="admin-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h2>Train Management</h2>
+                        <p>Manage railway schedules and availability.</p>
+                    </div>
+
+                    <button class="small-btn">
+                        + Add Train
+                    </button>
+
+                </div>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Train No.</th>
+                            <th>Train Name</th>
+                            <th>Route</th>
+                            <th>Seats</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>12608</td>
+                            <td>Chennai Express</td>
+                            <td>Chennai → Bangalore</td>
+                            <td>84</td>
+                            <td>
+                                <span class="status confirmed">
+                                    Active
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>12621</td>
+                            <td>Tamil Nadu Express</td>
+                            <td>Chennai → Delhi</td>
+                            <td>126</td>
+                            <td>
+                                <span class="status confirmed">
+                                    Active
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>12759</td>
+                            <td>Charminar Express</td>
+                            <td>Chennai → Hyderabad</td>
+                            <td>53</td>
+                            <td>
+                                <span class="status confirmed">
+                                    Active
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="admin-card">
+
+                <h2>Refund Rules</h2>
+
+                <p>
+                    Configure refund percentage according to
+                    cancellation date.
+                </p>
+
+                <div class="refund-rule">
+                    <span>More than 48 hours</span>
+                    <strong>80%</strong>
+                </div>
+
+                <div class="refund-rule">
+                    <span>24 - 48 hours</span>
+                    <strong>50%</strong>
+                </div>
+
+                <div class="refund-rule">
+                    <span>12 - 24 hours</span>
+                    <strong>25%</strong>
+                </div>
+
+                <div class="refund-rule">
+                    <span>Less than 12 hours</span>
+                    <strong>0%</strong>
+                </div>
+
+                <button class="primary-btn">
+                    Update Rules
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="admin-card">
+
+            <div class="card-heading">
+
+                <div>
+                    <h2>Recent Payments</h2>
+                    <p>Latest passenger payment transactions.</p>
+                </div>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Passenger</th>
+                        <th>PNR</th>
+                        <th>Amount</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>TXN982341</td>
+                        <td>Rahul Kumar</td>
+                        <td>4829173641</td>
+                        <td>₹685</td>
+                        <td>Online</td>
+                        <td>
+                            <span class="status confirmed">
+                                Success
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>TXN982342</td>
+                        <td>Anitha Raj</td>
+                        <td>5938172640</td>
+                        <td>₹1,120</td>
+                        <td>Online</td>
+                        <td>
+                            <span class="status confirmed">
+                                Success
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

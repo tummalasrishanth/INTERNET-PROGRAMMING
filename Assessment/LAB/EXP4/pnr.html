@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PNR Status - RailConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🚆 Rail<span>Connect</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="trains.html">Search Trains</a>
+        <a href="pnr.html" class="active">PNR Status</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+</header>
+
+<section class="page-header">
+
+    <p>BOOKING INFORMATION</p>
+
+    <h1>Check PNR Status</h1>
+
+    <span>
+        Enter your 10-digit PNR number to check reservation status.
+    </span>
+
+</section>
+
+<section class="pnr-container">
+
+    <div class="pnr-search-card">
+
+        <div class="pnr-icon">
+            🎟️
+        </div>
+
+        <h2>PNR Enquiry</h2>
+
+        <p>
+            Check your ticket confirmation, passenger and journey details.
+        </p>
+
+        <form onsubmit="checkPNR(event)">
+
+            <input
+                type="text"
+                id="pnrInput"
+                maxlength="10"
+                placeholder="Enter PNR Number"
+                required>
+
+            <button class="primary-btn">
+                Check Status
+            </button>
+
+        </form>
+
+        <div id="pnrResult"></div>
+
+    </div>
+
+</section>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

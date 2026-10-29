@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Ticket - RailConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🚆 Rail<span>Connect</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="trains.html">Trains</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+</header>
+
+<section class="page-header">
+
+    <p>RESERVATION</p>
+
+    <h1>Book Your Ticket</h1>
+
+    <span>Enter passenger details and select your seat.</span>
+
+</section>
+
+<section class="booking-container">
+
+    <div class="booking-main">
+
+        <div class="booking-card">
+
+            <h2>🚆 Train Information</h2>
+
+            <div id="selectedTrain"></div>
+
+        </div>
+
+        <div class="booking-card">
+
+            <h2>👤 Passenger Details</h2>
+
+            <form onsubmit="confirmBooking(event)">
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label>Passenger Name</label>
+
+                        <input
+                            type="text"
+                            id="passengerName"
+                            required
+                            placeholder="Enter passenger name">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Age</label>
+
+                        <input
+                            type="number"
+                            id="passengerAge"
+                            min="1"
+                            max="120"
+                            required
+                            placeholder="Age">
+
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label>Gender</label>
+
+                        <select id="passengerGender" required>
+
+                            <option value="">Select</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Class</label>
+
+                        <select id="bookingClass">
+
+                            <option>AC First Class</option>
+                            <option>AC 2 Tier</option>
+                            <option>AC 3 Tier</option>
+                            <option>Sleeper</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <h3 class="sub-heading">Select Seat</h3>
+
+                <div class="seat-grid" id="seatGrid">
+
+                    <button type="button" class="seat available">1A</button>
+                    <button type="button" class="seat available">1B</button>
+                    <button type="button" class="seat occupied">1C</button>
+                    <button type="button" class="seat available">1D</button>
+
+                    <button type="button" class="seat available">2A</button>
+                    <button type="button" class="seat occupied">2B</button>
+                    <button type="button" class="seat available">2C</button>
+                    <button type="button" class="seat available">2D</button>
+
+                    <button type="button" class="seat available">3A</button>
+                    <button type="button" class="seat available">3B</button>
+                    <button type="button" class="seat available">3C</button>
+                    <button type="button" class="seat occupied">3D</button>
+
+                </div>
+
+                <div class="seat-legend">
+
+                    <span>
+                        <i class="legend available"></i>
+                        Available
+                    </span>
+
+                    <span>
+                        <i class="legend selected"></i>
+                        Selected
+                    </span>
+
+                    <span>
+                        <i class="legend occupied"></i>
+                        Occupied
+                    </span>
+
+                </div>
+
+                <h3 class="sub-heading">Payment Method</h3>
+
+                <div class="payment-options">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Online"
+                            checked>
+                        💳 Online Payment
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Offline">
+                        💵 Offline Payment
+                    </label>
+
+                </div>
+
+                <button class="primary-btn">
+                    Confirm & Pay
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <aside class="fare-card">
+
+        <h2>Fare Summary</h2>
+
+        <div class="fare-row">
+            <span>Ticket Fare</span>
+            <strong id="ticketFare">₹650</strong>
+        </div>
+
+        <div class="fare-row">
+            <span>Reservation Fee</span>
+            <strong>₹25</strong>
+        </div>
+
+        <div class="fare-row">
+            <span>Service Charge</span>
+            <strong>₹10</strong>
+        </div>
+
+        <hr>
+
+        <div class="fare-total">
+            <span>Total</span>
+            <strong id="totalFare">₹685</strong>
+        </div>
+
+    </aside>
+
+</section>
+
+<script src="js/app.js"></script>
+
+<script>
+    setupSeatSelection();
+    loadSelectedTrain();
+</script>
+
+</body>
+</html>

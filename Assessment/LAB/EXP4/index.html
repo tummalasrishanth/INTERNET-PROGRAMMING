@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailConnect - Railway Reservation System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        🚆 Rail<span>Connect</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="trains.html">Search Trains</a>
+        <a href="pnr.html">PNR Status</a>
+        <a href="login.html">Login</a>
+        <a href="register.html" class="nav-btn">Register</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+        <p class="hero-tag">INDIAN RAILWAY RESERVATION</p>
+
+        <h1>
+            Travel Smart.<br>
+            Travel <span>RailConnect.</span>
+        </h1>
+
+        <p>
+            Search trains, check seat availability, reserve tickets
+            and manage your railway journey from one place.
+        </p>
+    </div>
+
+    <div class="search-card">
+
+        <h2>Search Trains</h2>
+
+        <form onsubmit="searchTrains(event)">
+
+            <div class="form-row">
+
+                <div class="input-group">
+                    <label>From Station</label>
+                    <select id="fromStation" required>
+                        <option value="">Select station</option>
+                        <option>Chennai</option>
+                        <option>Bangalore</option>
+                        <option>Hyderabad</option>
+                        <option>Mumbai</option>
+                        <option>Delhi</option>
+                        <option>Kolkata</option>
+                    </select>
+                </div>
+
+                <div class="swap">⇄</div>
+
+                <div class="input-group">
+                    <label>To Station</label>
+                    <select id="toStation" required>
+                        <option value="">Select station</option>
+                        <option>Chennai</option>
+                        <option>Bangalore</option>
+                        <option>Hyderabad</option>
+                        <option>Mumbai</option>
+                        <option>Delhi</option>
+                        <option>Kolkata</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="input-group">
+                    <label>Journey Date</label>
+                    <input type="date" id="journeyDate" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Class</label>
+                    <select id="travelClass">
+                        <option>All Classes</option>
+                        <option>AC First Class</option>
+                        <option>AC 2 Tier</option>
+                        <option>AC 3 Tier</option>
+                        <option>Sleeper</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button class="primary-btn" type="submit">
+                🔎 Search Trains
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="section-heading">
+        <p>WHY CHOOSE US</p>
+        <h2>Everything You Need For Your Journey</h2>
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon blue">🚆</div>
+            <h3>Train Search</h3>
+            <p>
+                Search available trains by route, journey date and
+                travel class.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon green">💺</div>
+            <h3>Seat Availability</h3>
+            <p>
+                View available seats and select your preferred
+                class and seat.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon orange">🎟️</div>
+            <h3>PNR Tracking</h3>
+            <p>
+                Check your booking status using your unique PNR number.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon purple">💰</div>
+            <h3>Easy Refunds</h3>
+            <p>
+                Cancel tickets and calculate refundable amounts
+                according to the rules.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <div>
+        <h3>🚆 RailConnect</h3>
+        <p>Online Railway Reservation System</p>
+    </div>
+
+    <div>
+        <p>© 2026 RailConnect. Internet Programming Project.</p>
+    </div>
+</footer>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
