@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sweet Haven - Cake Ordering System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        🍰 Sweet Haven
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#cakes">Cakes</a>
+        <a href="#orders">My Orders</a>
+        <a href="#cart">Cart <span id="cartCount">0</span></a>
+        <a href="#admin">Admin</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-title">FRESH • SWEET • HOMEMADE</p>
+
+        <h1>
+            Your Perfect Cake<br>
+            <span>Made With Love</span>
+        </h1>
+
+        <p>
+            Discover delicious cakes for birthdays, weddings,
+            celebrations and every special occasion.
+        </p>
+
+        <button onclick="showSection('cakes')">
+            Explore Cakes
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LOGIN / REGISTER ================= -->
+
+<section class="auth-section">
+
+    <div class="auth-card">
+
+        <h2>Student Login</h2>
+
+        <input
+            type="text"
+            id="loginName"
+            placeholder="Enter your name"
+        >
+
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Enter email"
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Enter password"
+        >
+
+        <button onclick="studentLogin()">
+            Login
+        </button>
+
+        <p id="loginMessage"></p>
+
+        <hr>
+
+        <h3>New Student?</h3>
+
+        <input
+            type="text"
+            id="registerName"
+            placeholder="Full Name"
+        >
+
+        <input
+            type="email"
+            id="registerEmail"
+            placeholder="Email"
+        >
+
+        <input
+            type="password"
+            id="registerPassword"
+            placeholder="Password"
+        >
+
+        <button onclick="studentRegister()">
+            Register
+        </button>
+
+        <p id="registerMessage"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAKE SEARCH ================= -->
+
+<section id="cakes" class="section">
+
+    <div class="section-title">
+
+        <p>OUR COLLECTION</p>
+
+        <h2>Find Your Favourite Cake</h2>
+
+    </div>
+
+
+    <div class="filters">
+
+        <input
+            type="text"
+            id="searchCake"
+            placeholder="Search cake..."
+            onkeyup="filterCakes()"
+        >
+
+        <select id="categoryFilter" onchange="filterCakes()">
+
+            <option value="all">All Categories</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Fruit">Fruit</option>
+
+        </select>
+
+
+        <select id="subCategoryFilter" onchange="filterCakes()">
+
+            <option value="all">All Sub Categories</option>
+            <option value="Eggless">Eggless</option>
+            <option value="Premium">Premium</option>
+            <option value="Classic">Classic</option>
+
+        </select>
+
+
+        <select id="priceFilter" onchange="filterCakes()">
+
+            <option value="all">All Prices</option>
+            <option value="500">Below ₹500</option>
+            <option value="1000">₹500 - ₹1000</option>
+            <option value="1500">Above ₹1000</option>
+
+        </select>
+
+    </div>
+
+
+    <div id="cakeList" class="cake-grid"></div>
+
+</section>
+
+
+<!-- ================= CART ================= -->
+
+<section id="cart" class="section cart-section">
+
+    <div class="section-title">
+
+        <p>YOUR SHOPPING CART</p>
+
+        <h2>My Cart</h2>
+
+    </div>
+
+
+    <div id="cartItems">
+
+        <p class="empty">
+            Your cart is empty.
+        </p>
+
+    </div>
+
+
+    <div class="cart-summary">
+
+        <h3>
+            Total:
+            ₹<span id="cartTotal">0</span>
+        </h3>
+
+        <button onclick="placeOrder()">
+            Place Order
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SHIPPING ================= -->
+
+<section class="section">
+
+    <div class="shipping-card">
+
+        <h2>Shipping Address</h2>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Full Name"
+        >
+
+        <input
+            type="text"
+            id="customerPhone"
+            placeholder="Phone Number"
+        >
+
+        <textarea
+            id="shippingAddress"
+            placeholder="Enter complete shipping address"
+        ></textarea>
+
+        <input
+            type="text"
+            id="shippingLocation"
+            placeholder="City / Location"
+        >
+
+        <button onclick="saveAddress()">
+            Save Shipping Address
+        </button>
+
+        <p id="addressMessage"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ORDERS ================= -->
+
+<section id="orders" class="section">
+
+    <div class="section-title">
+
+        <p>ORDER MANAGEMENT</p>
+
+        <h2>My Orders</h2>
+
+    </div>
+
+
+    <div id="orderList">
+
+        <p class="empty">
+            No orders placed yet.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ADMIN ================= -->
+
+<section id="admin" class="section admin-section">
+
+    <div class="section-title">
+
+        <p>ADMIN PANEL</p>
+
+        <h2>Administrator</h2>
+
+    </div>
+
+
+    <div class="admin-login">
+
+        <h3>Admin Login</h3>
+
+        <input
+            type="text"
+            id="adminUsername"
+            placeholder="Username"
+        >
+
+        <input
+            type="password"
+            id="adminPassword"
+            placeholder="Password"
+        >
+
+        <button onclick="adminLogin()">
+            Admin Login
+        </button>
+
+        <p id="adminMessage"></p>
+
+        <small>
+            Demo: admin / admin123
+        </small>
+
+    </div>
+
+
+    <div id="adminPanel" class="admin-panel hidden">
+
+        <div class="admin-top">
+
+            <h2>Admin Dashboard</h2>
+
+            <button onclick="adminLogout()">
+                Logout
+            </button>
+
+        </div>
+
+
+        <div class="admin-cards">
+
+            <div>
+                <h3 id="totalProducts">0</h3>
+                <p>Products</p>
+            </div>
+
+            <div>
+                <h3 id="totalOrders">0</h3>
+                <p>Orders</p>
+            </div>
+
+            <div>
+                <h3 id="totalRevenue">₹0</h3>
+                <p>Revenue</p>
+            </div>
+
+        </div>
+
+
+        <!-- ADD PRODUCT -->
+
+        <div class="admin-form">
+
+            <h3>Post Cake Details</h3>
+
+            <input
+                type="text"
+                id="productName"
+                placeholder="Cake Name"
+            >
+
+            <select id="productCategory">
+
+                <option value="Birthday">Birthday</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Chocolate">Chocolate</option>
+                <option value="Fruit">Fruit</option>
+
+            </select>
+
+            <select id="productSubCategory">
+
+                <option value="Classic">Classic</option>
+                <option value="Eggless">Eggless</option>
+                <option value="Premium">Premium</option>
+
+            </select>
+
+            <input
+                type="number"
+                id="productPrice"
+                placeholder="Price"
+            >
+
+            <input
+                type="text"
+                id="productImage"
+                placeholder="Image URL"
+            >
+
+            <textarea
+                id="productDescription"
+                placeholder="Cake Description"
+            ></textarea>
+
+            <button onclick="addProduct()">
+                Add Cake
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <div>
+
+            <h3>Manage Products</h3>
+
+            <div id="adminProducts"></div>
+
+        </div>
+
+
+        <!-- ORDERS -->
+
+        <div>
+
+            <h3>Manage Orders</h3>
+
+            <div id="adminOrders"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>🍰 Sweet Haven</h2>
+
+    <p>
+        Fresh cakes for every special moment.
+    </p>
+
+    <p>
+        © 2026 Sweet Haven Cake Ordering System
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
