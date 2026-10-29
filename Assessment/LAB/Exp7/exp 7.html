@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glow & Grace | Beauty Parlour</title>
+  <link rel="stylesheet" href="style7.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="#" class="logo">Glow <span>& Grace</span></a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#stylists">Stylists</a>
+    <a href="#booking">Book Now</a>
+    <a href="#account">My Account</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="eyebrow">YOUR BEAUTY, OUR PASSION</p>
+    <h1>Discover Your<br><span>Natural Glow</span></h1>
+    <p>Professional beauty treatments, talented stylists
+      and effortless online appointments.</p>
+    <a href="#booking" class="btn">Book an Appointment</a>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <p class="eyebrow">WHAT WE OFFER</p>
+  <h2>Our Beauty Services</h2>
+  <div class="cards" id="serviceCards"></div>
+</section>
+
+<section class="section stylist-section" id="stylists">
+  <p class="eyebrow">MEET OUR EXPERTS</p>
+  <h2>Choose Your Stylist</h2>
+  <div class="cards" id="stylistCards"></div>
+</section>
+
+<section class="section booking-section" id="booking">
+  <p class="eyebrow">RESERVE YOUR TIME</p>
+  <h2>Book Your Appointment</h2>
+
+  <form id="bookingForm" class="booking-form">
+    <input type="hidden" id="editId">
+
+    <label for="customerName">Full Name</label>
+    <input id="customerName" required placeholder="Enter your name">
+
+    <label for="customerEmail">Email Address</label>
+    <input id="customerEmail" type="email" required
+           placeholder="you@example.com">
+
+    <label for="customerPhone">Phone Number</label>
+    <input id="customerPhone" type="tel" required
+           placeholder="Enter your phone number">
+
+    <label for="service">Select Service</label>
+    <select id="service" required></select>
+
+    <label for="stylist">Choose Stylist</label>
+    <select id="stylist" required></select>
+
+    <label for="date">Appointment Date</label>
+    <input id="date" type="date" required>
+
+    <label for="time">Available Time Slot</label>
+    <select id="time" required>
+      <option value="">Choose a date and stylist first</option>
+    </select>
+    <p id="slotMessage" class="small-text"></p>
+
+    <label for="paymentType">Payment Method</label>
+    <select id="paymentType" required>
+      <option value="pay-later">Pay at Salon</option>
+      <option value="deposit">Online Deposit (20%)</option>
+      <option value="full">Full Online Payment</option>
+    </select>
+
+    <div class="price-box">
+      <p>Service Price: <strong id="servicePrice">₹0</strong></p>
+      <p>Pay Now: <strong id="payAmount">₹0</strong></p>
+      <p id="paymentNote" class="small-text">
+        Payment is not processed by this demo.
+      </p>
+    </div>
+
+    <button type="submit" class="btn" id="submitBtn">
+      Confirm Appointment
+    </button>
+    <button type="button" class="btn btn-light hidden"
+            id="resetEdit">Stop Editing</button>
+    <p id="formMessage" role="status"></p>
+  </form>
+</section>
+
+<section class="section" id="account">
+  <p class="eyebrow">CUSTOMER DASHBOARD</p>
+  <h2>My Appointments</h2>
+
+  <div class="account-tools">
+    <input type="email" id="accountEmail"
+           placeholder="Enter your booking email">
+    <button class="btn" id="loadAccount">View My Bookings</button>
+  </div>
+
+  <div class="cards" id="customerBookings">
+    <p>Enter your email to view your reservations.</p>
+  </div>
+</section>
+
+<section class="section manager-section" id="manager">
+  <p class="eyebrow">SALON MANAGEMENT</p>
+  <h2>Manager Dashboard</h2>
+  <p class="small-text">
+    Demo panel. A production system must protect this page with
+    administrator authentication.
+  </p>
+
+  <div class="stats">
+    <div class="stat"><span id="totalBookings">0</span>
+      <p>Total Bookings</p></div>
+    <div class="stat"><span id="upcomingBookings">0</span>
+      <p>Upcoming</p></div>
+    <div class="stat"><span id="cancelledBookings">0</span>
+      <p>Cancelled</p></div>
+  </div>
+
+  <h3>Reservation Calendar</h3>
+  <div class="calendar-controls">
+    <button class="btn btn-light" id="prevMonth">← Previous</button>
+    <h3 id="calendarTitle"></h3>
+    <button class="btn btn-light" id="nextMonth">Next →</button>
+  </div>
+  <div class="calendar" id="calendar"></div>
+  <p id="selectedDayInfo" class="small-text">
+    Select a date to view its reservations.
+  </p>
+
+  <h3>Manage Reservations</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Service</th>
+          <th>Stylist</th>
+          <th>Date & Time</th>
+          <th>Payment</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="managerBookings"></tbody>
+    </table>
+  </div>
+
+  <h3>Block / Unblock Time Slots</h3>
+  <form id="blockForm" class="booking-form">
+    <label for="blockStylist">Stylist</label>
+    <select id="blockStylist" required></select>
+    <label for="blockDate">Date</label>
+    <input id="blockDate" type="date" required>
+    <label for="blockTime">Time</label>
+    <select id="blockTime" required></select>
+    <button class="btn" type="submit">Block Time Slot</button>
+  </form>
+
+  <h3>Customer Feedback</h3>
+  <form id="feedbackForm" class="booking-form">
+    <label for="feedbackEmail">Your Email</label>
+    <input type="email" id="feedbackEmail" required>
+    <label for="feedbackRating">Rating</label>
+    <select id="feedbackRating">
+      <option value="5">★★★★★ - Excellent</option>
+      <option value="4">★★★★ - Very Good</option>
+      <option value="3">★★★ - Good</option>
+      <option value="2">★★ - Fair</option>
+      <option value="1">★ - Poor</option>
+    </select>
+    <label for="feedbackText">Your Feedback</label>
+    <textarea id="feedbackText" required
+              placeholder="Tell us about your experience"></textarea>
+    <button class="btn">Submit Feedback</button>
+  </form>
+  <div id="feedbackList"></div>
+</section>
+
+<footer>
+  <h3>Glow & Grace</h3>
+  <p>Feel beautiful. Feel confident.</p>
+  <p>© 2026 Glow & Grace Beauty Parlour</p>
+</footer>
+
+<script src="script1.js"></script>
+</body>
+</html>
